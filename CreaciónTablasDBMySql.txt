@@ -1,0 +1,154 @@
+﻿-- phpMyAdmin SQL Dump
+-- version 3.5.1
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tiempo de generación: 19-12-2017 a las 03:09:48
+-- Versión del servidor: 5.5.24-log
+-- Versión de PHP: 5.4.3
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Base de datos: `mysql`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tusuarioxttarea`
+--
+
+CREATE TABLE IF NOT EXISTS `tusuarioxttarea` (
+  `nombreUsuario` varchar(20) NOT NULL,
+  `nombreTarea` varchar(20) NOT NULL,
+  `fechaAsignacion` varchar(20) NOT NULL,
+  `fechaATerminar` varchar(20) NOT NULL,
+  `nombreEstado` varchar(20) NOT NULL,
+  `observacion` varchar(50) NOT NULL,
+  PRIMARY KEY (`nombreUsuario`,`nombreTarea`,`nombreEstado`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `tusuarioxttarea`
+--
+
+INSERT INTO `tusuarioxttarea` (`nombreUsuario`, `nombreTarea`, `fechaAsignacion`, `fechaATerminar`, `nombreEstado`, `observacion`) VALUES
+('rosa', 'Desarrollar', '01/01/01', '01/11/2017', 'finalizado', 'realiza documentacion de codigo '),
+('rosa', 'Desarrollar', '01/10/2017', '01/11/2017', 'nofinalizado', 'realiza documentacion de codigo ');
+
+
+
+
+-- phpMyAdmin SQL Dump
+-- version 3.5.1
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tiempo de generación: 19-12-2017 a las 03:12:50
+-- Versión del servidor: 5.5.24-log
+-- Versión de PHP: 5.4.3
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Base de datos: `mysql`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tusuario`
+--
+
+CREATE TABLE IF NOT EXISTS `tusuario` (
+  `nombreUsuario` varchar(20) NOT NULL,
+  `contrasena` varchar(20) NOT NULL,
+  PRIMARY KEY (`nombreUsuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `tusuario`
+--
+
+INSERT INTO `tusuario` (`nombreUsuario`, `contrasena`) VALUES
+('Admin', 'Admin'),
+('rosa', 'rosarosa'),
+('Yo', 'Yoyo');
+
+-- phpMyAdmin SQL Dump
+-- version 3.5.1
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tiempo de generación: 19-12-2017 a las 03:13:33
+-- Versión del servidor: 5.5.24-log
+-- Versión de PHP: 5.4.3
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Base de datos: `mysql`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ttarea`
+--
+
+CREATE TABLE IF NOT EXISTS `ttarea` (
+  `nombreTarea` varchar(20) NOT NULL,
+  `fechaInicioProyectada` varchar(20) NOT NULL,
+  `fechaVenceProyectada` varchar(20) NOT NULL,
+  `descripcion` text NOT NULL,
+  `nombreUsuario` varchar(20) NOT NULL,
+  PRIMARY KEY (`nombreTarea`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `ttarea`
+--
+
+INSERT INTO `ttarea` (`nombreTarea`, `fechaInicioProyectada`, `fechaVenceProyectada`, `descripcion`, `nombreUsuario`) VALUES
+('consulta', '01/10/2018', '01/11/2017', 'realiza consulta', 'rosa'),
+('Desarrollar', '01/01/2017', '01/10/2017', 'Se entrega codigo generico', 'Yo');
+
+-- phpMyAdmin SQL Dump
+-- version 3.5.1
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tiempo de generación: 19-12-2017 a las 03:14:26
+-- Versión del servidor: 5.5.24-log
+-- Versión de PHP: 5.4.3
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Base de datos: `mysql`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `testado`
+--
+
+CREATE TABLE IF NOT EXISTS `testado` (
+  `nombreEstado` varchar(20) NOT NULL,
+  PRIMARY KEY (`nombreEstado`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `testado`
+--
+
+INSERT INTO `testado` (`nombreEstado`) VALUES
+('finalizado'),
+('nofinalizado'),
+('pendiente');
